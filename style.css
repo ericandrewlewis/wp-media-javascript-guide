@@ -5,6 +5,9 @@
 .example h4 {
 	text-transform: uppercase;
 }
+.entry-template {
+	display: none;
+}
 .live-example {
 	background: white;
 	padding: 20px;
@@ -12,4 +15,10 @@
 /* Hack to fix highlight.js being stupid */
 .coffeescript .javascript, .javascript .xml, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata, .xml .php, .php .xml {
 	opacity: 1;
+}
+
+.region-1 {
+	border: 1px dashed #ddd;
+	margin-bottom: 1em;
+	min-height: 100px;
 }

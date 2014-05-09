@@ -4,7 +4,7 @@
 	<h3>wp.Backbone.View</h3>
 	<p>An extension of <code>Backbone.View</code>. All views in WordPress are built on top of this. A Subview Manager is baked in via <code>wp.Backbone.Subviews</code>.</p>
 	<div class="example">
-		<h3>Example</h3>
+		<h3>Example: Render a view with a subview</h3>
 		<h4>TEMPLATE MARKUP</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-example-1-view-1&quot;&gt;
 	A view template.
@@ -47,12 +47,12 @@
 });</code></pre>
 		<h4>IN-PAGE MARKUP</h4>
 <pre><code class="language-html">&lt;div class=&quot;example-1-view-1-container&quot;&gt;&lt;/div&gt;
-&lt;button class=&quot;js--example-1-view-1-render&quot;&gt;Click to render View&lt;/button&gt;
+&lt;button class=&quot;js--example-1-view-1-render&quot;&gt;Click to render the parent view&lt;/button&gt;
 </code></pre>
 		<h4>LIVE EXAMPLE</h4>
 		<div class="live-example">
 			<div class="example-1-view-1-container"></div>
-			<button class="js--example-1--render-view-1">Click to render View</button>
+			<button class="js--example-1--render-view-1">Click to render the parent view</button>
 			<script type="text/template" id="tmpl-example-1-view-1">
 				A view template.
 				<div class="subview-container"></div>
@@ -65,7 +65,7 @@
 	<h3>wp.media.View.Modal</h3>
 	<p>A view that creates a modal. The modal can be closed and reopened without changing markup (i.e. losing state). The default media experience uses it as a wrapper, however it can be used outside the media context.</p>
 	<div class="example">
-		<h3>Example</h3>
+		<h3>Example: Open a modal</h3>
 		<h4>Template Markup</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-modal-content&quot;&gt;
 	&lt;h1&gt;Hi, I&amp;#39;m a Modal!&lt;/h1&gt;
@@ -74,7 +74,7 @@
 		<p>Create a template for the modal content view.</p>
 		<h4>Javascript</h4>
 <pre><code class="language-javascript">// When the user clicks a button, create a modal.
-$(&#039;.js--example-2-open-media-modal&#039;).click( function( event ) {
+$(&#039;.js--example-2--open-media-modal&#039;).click( function( event ) {
 	event.preventDefault();
 	// Create a modal view.
 	var modal = new wp.media.view.Modal({
@@ -94,14 +94,115 @@ $(&#039;.js--example-2-open-media-modal&#039;).click( function( event ) {
 	modal.open();
 });</code></pre>
 		<h4>In-page Markup</h4>
-<pre><code class="language-html">&lt;button class=&quot;js--example-2-open-media-modal&quot;&gt;Open a modal&lt;/button&gt;
+<pre><code class="language-html">&lt;button class=&quot;js--example-2--open-media-modal&quot;&gt;Open a modal&lt;/button&gt;
 </code></pre>
 		<h4>LIVE EXAMPLE</h4>
 		<div class="live-example">
-			<button class="js--example-2-open-media-modal">Open a modal</button>
+			<button class="js--example-2--open-media-modal">Open a modal</button>
 			<script type="text/template" id="tmpl-modal-content">
 				<h1>Hi, I&#39;m a Modal!</h1>
 			</script>
+		</div>
+	</div>
+	<h3>wp.media.controller.region</h3>
+	<p>A region is a persistent section of a layout, which can hold a view, and can be replaced by a different view as the application requires.</p>
+	<p>A region allows views to be swapped in and out of a section of the page without either view having to know about the other.</p>
+	<p>Regions are not a WordPress creation: Marionette has a <a href="https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.region.md">region object</a>; Derick Bailey <a href="http://lostechies.com/derickbailey/2011/12/12/composite-js-apps-regions-and-region-managers/">wrote about the concept a while ago</a>.</p>
+	<div class="example">
+		<h3>Example: Render a view in a region</h3>
+		<h4>Template Markup</h4>
+<pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-example-3-view-1&quot;&gt;
+	&lt;h1&gt;Hi, I&amp;#39;m a view inside a region!&lt;/h1&gt;
+&lt;/script&gt;</code></pre>
+		<h4>Javascript</h4>
+<pre><code class="language-javascript">$(&#039;.js--example-3--render-region&#039;).click( function( event ) {
+		event.preventDefault();
+
+		// A region requires a parent view to live inside.
+		var RegionParentViewConstructor = wp.Backbone.View.extend({
+			// When the view is initialized, bind events to callbacks.
+			initialize: function() {
+				// Regions trigger events on their parent views, which
+				// the parent view should bind callbacks for.
+
+				// When the region is created:
+				// Events triggered: {region-id}:create and {region-id}:create:{mode}
+				this.on( &#039;region-1:create&#039;, this.onCreateRegion, this );
+
+				// When the region is rendered:
+				// Events triggered: {region-id}:render and {region-id}:render:{mode}
+			},
+
+			/**
+			 * On the &quot;create&quot; event, the region controller is passed as an
+			 * argument.
+			 *
+			 * This is the time to create a view on the region.
+			 */
+			onCreateRegion: function( region ) {
+				// Create a basic view constructor that binds to a template.
+				var RegionViewConstructor = wp.Backbone.View.extend({
+					// assign a compiled template function.
+					template: wp.template( &#039;example-3-view-1&#039; )
+				});
+				// Create the view for the region, which is automatically
+				// rendered later.
+				region.view = new RegionViewConstructor();
+			}
+		});
+		// Create an instance of the RegionParentView.
+		var RegionParentView = new RegionParentViewConstructor({
+			// Tie the view to an existing DOM element.
+			el: &#039;.example-3--region-parent-view&#039;
+		});
+		// Render the region parent view.
+		RegionParentView.render();
+
+		// Create a new region
+		var RegionOne = new wp.media.controller.Region({
+			// Unique identifier.
+			id: &#039;region-1&#039;,
+			// The region&#039;s parent view.
+			view: RegionParentView,
+			// The selector for the element in the parent view&#039;s markup
+			// that represents the region.
+			selector: &#039;.region-1&#039;
+		});
+		// Render a mode on the region to trigger the {region}:create
+		// event on the parent view.
+		RegionOne.render( &#039;some-mode&#039; );
+	});
+});</code></pre>
+		<h4>In-page Markup</h4>
+<pre><code class="language-html">&lt;div class=&quot;example-3--region-parent-view&quot;&gt;
+	&lt;div class=&quot;region-1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;button class=&quot;js--example-3--render-region&quot;&gt;Render Region&lt;/button&gt;</code></pre>
+		<h4>LIVE EXAMPLE</h4>
+		<div class="live-example">
+			<script type="text/template" id="tmpl-example-3-view-1">
+				<h1>Hi, I&#39;m a view inside a region!</h1>
+			</script>
+			<div class="example-3--region-parent-view">
+				<div class="region-1"></div>
+			</div>
+			<button class="js--example-3--render-region">Render Region</button>
+		</div>
+	</div>
+	<div class="entry-template">
+		<h3>TITLE</h3>
+		<p>CONTENT</p>
+		<div class="example">
+			<h3>Example</h3>
+			<h4>Template Markup</h4>
+	<pre><code class="language-html"></code></pre>
+			<h4>Javascript</h4>
+	<pre><code class="language-javascript"></code></pre>
+			<h4>In-page Markup</h4>
+	<pre><code class="language-html"></code></pre>
+			<h4>LIVE EXAMPLE</h4>
+			<div class="live-example">
+			</div>
 		</div>
 	</div>
 </div>
