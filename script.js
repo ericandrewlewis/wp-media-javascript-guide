@@ -21,8 +21,8 @@
 
 		// Set the subview on a selector inside the main view's template.
 		View.views.set( '.subview-container', Subview );
-		$('.js--example-1-view-1-render').on( 'click', function() {
-			// When a superview is rendered, all subviews are rendered automagically.
+		$('.js--example-1--render-view-1').on( 'click', function() {
+			// When a parent view is rendered, all subviews are rendered automagically.
 			View.render();
 		});
 	});
@@ -34,7 +34,9 @@
 			event.preventDefault();
 			// Create a modal view.
 			var modal = new wp.media.view.Modal({
-				// Ignore this bit for now.
+				// A controller object is expected, but let's just pass
+				// a fake one to illustrate this proof of concept without
+				// getting console errors.
 				controller: { trigger: function() {} }
 			});
 			// Create a modal content view.

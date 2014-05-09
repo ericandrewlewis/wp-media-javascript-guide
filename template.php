@@ -1,7 +1,6 @@
 <div class="wrap">
 	<h2>WordPress Media Backbone Guide</h2>
-	<p>This is an introduction to Backbone design patterns and reusable elements found in the WordPress Media experience. </p>
-	<p>An understanding of Backbone is suggested, or a great desire to ;) </p>
+	<p>An introduction to Backbone design patterns and reusable elements in the WordPress Media experience. Knowledge of <a href="http://backbonejs.org">Backbone</a> is a soft prerequisite.</p>
 	<h3>wp.Backbone.View</h3>
 	<p>An extension of <code>Backbone.View</code>. All views in WordPress are built on top of this. A Subview Manager is baked in via <code>wp.Backbone.Subviews</code>.</p>
 	<div class="example">
@@ -16,35 +15,36 @@
 &lt;/script&gt;</code></pre>
 		<p>An element goes in a view where a subview will be rendered (here <code>.subview-container</code>).</p>
 		<p><code>wp.template()</code> will find templates where <code>id="tmpl-{...}"</code>, so ID templates accordingly.</p>
-		<p><code>wp.template()</code> uses Mustache-inspired templating tags (see <a href="http://core.trac.wordpress.org/ticket/22344">#22344</a>), so use them like so:
+		<p><code>wp.template()</code> expects Mustache-inspired templating tags (see <a href="http://core.trac.wordpress.org/ticket/22344">#22344</a>), so use them:
 			<blockquote>
 			<code>{{{ interpolating }}}</code>,<code>{{ 'escaping' }}</code>,<code><# execution #></code>
 		</blockquote>
 		</p>
 		<h4>JAVASCRIPT</h4>
-<pre><code class="language-javascript">// Create view and subview constructors.
-var ViewConstructor = wp.Backbone.View.extend({
-	// assign a compiled template function.
-	template: wp.template( &#039;example-1-view-1&#039; )
-});
-var SubviewConstructor = wp.Backbone.View.extend({
-	template: wp.template( &#039;example-1-view-2&#039; )
-});
+<pre><code class="language-javascript">$(document).ready( function() {
+	// Create view and subview constructors.
+	var ViewConstructor = wp.Backbone.View.extend({
+		// assign a compiled template function.
+		template: wp.template( &#039;example-1-view-1&#039; )
+	});
+	var SubviewConstructor = wp.Backbone.View.extend({
+		template: wp.template( &#039;example-1-view-2&#039; )
+	});
 
-// Create the views.
-var View = new ViewConstructor({
-	// specify an existing element in the document to bind the view to.
-	el: &#039;.example-1-view-1-container&#039;
-});
-var Subview = new SubviewConstructor();
+	// Create the views.
+	var View = new ViewConstructor({
+		// specify an existing element in the document to bind the view to.
+		el: &#039;.example-1-view-1-container&#039;
+	});
+	var Subview = new SubviewConstructor();
 
-// Set the subview on a selector inside the main view&#039;s template.
-View.views.set( &#039;.subview-container&#039;, Subview );
-$(&#039;.js--example-1-view-1-render&#039;).on( &#039;click&#039;, function() {
-	// When a superview&nbsp;is rendered, all subviews are rendered automagically.
-	View.render();
+	// Set the subview on a selector inside the main view&#039;s template.
+	View.views.set( &#039;.subview-container&#039;, Subview );
+	$(&#039;.js--example-1--render-view-1&#039;).on( &#039;click&#039;, function() {
+		// When a parent view is rendered, all subviews are rendered automagically.
+		View.render();
+	});
 });</code></pre>
-		Create two constructors extending <code>wp.Backbone.View</code>, assigning them each a compiled template. The superview automatically renders the subview.
 		<h4>IN-PAGE MARKUP</h4>
 <pre><code class="language-html">&lt;div class=&quot;example-1-view-1-container&quot;&gt;&lt;/div&gt;
 &lt;button class=&quot;js--example-1-view-1-render&quot;&gt;Click to render View&lt;/button&gt;
@@ -52,7 +52,7 @@ $(&#039;.js--example-1-view-1-render&#039;).on( &#039;click&#039;, function() {
 		<h4>LIVE EXAMPLE</h4>
 		<div class="live-example">
 			<div class="example-1-view-1-container"></div>
-			<button class="js--example-1-view-1-render">Click to render View</button>
+			<button class="js--example-1--render-view-1">Click to render View</button>
 			<script type="text/template" id="tmpl-example-1-view-1">
 				A view template.
 				<div class="subview-container"></div>
@@ -78,7 +78,9 @@ $(&#039;.js--example-2-open-media-modal&#039;).click( function( event ) {
 	event.preventDefault();
 	// Create a modal view.
 	var modal = new wp.media.view.Modal({
-		// Ignore this bit for now.
+		// A controller object is expected, but let&#039;s just pass
+		// a fake one to illustrate this proof of concept without
+		// getting console errors.
 		controller: { trigger: function() {} }
 	});
 	// Create a modal content view.
@@ -90,8 +92,7 @@ $(&#039;.js--example-2-open-media-modal&#039;).click( function( event ) {
 	modal.content( new ModalContentView() );
 	// Out of the box, the modal is closed, so we need to open() it.
 	modal.open();
-});
-</code></pre>
+});</code></pre>
 		<h4>In-page Markup</h4>
 <pre><code class="language-html">&lt;button class=&quot;js--example-2-open-media-modal&quot;&gt;Open a modal&lt;/button&gt;
 </code></pre>
