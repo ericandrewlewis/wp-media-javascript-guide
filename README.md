@@ -1,4 +1,4 @@
-wp-media-backbone-tutorial
-==========================
+WordPress Backbone Media Guide
+==============================
 
-Code examples to try to break down the kerfuffle that is Backbone in WordPress Media.
+Enabling this plugin will create a top-level admin page "Media Guide," where documentation on Backbone design patterns and reusable elements can be found.

@@ -26,30 +26,39 @@ class WPMT {
 	 */
 	protected function __construct() {
 		add_action( 'media_buttons', array( $this, 'add_media_button' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 	}
 
+	public function admin_menu() {
+		add_menu_page( 'Media Guide', 'Media Guide', 'manage_options', 'media-guide', array( $this, 'render_page' )  );
+	}
+
+	public function render_page() {
+		require( 'template.php' );
+	}
 	/**
 	 * Enqueue scripts.
 	 */
 	public function admin_enqueue_scripts() {
 		// Bail if we're not on the edit post screen.
-		if ( get_current_screen()->base != 'post' )
+		if ( get_current_screen()->base != 'toplevel_page_media-guide' )
 			return;
 
-		// Enqueue script for creating a basic modal.
-		wp_enqueue_script( 'wp-media-tutorial-basic-modal',
-			plugin_dir_url( __FILE__ ) . 'js/basic-modal.js',
-			array( 'media-views', 'media-models') );
+		wp_enqueue_media();
 
+		wp_enqueue_script( 'highlight-js',
+			plugin_dir_url( __FILE__ ) . 'includes/highlight/highlight.pack.js' );
 
-		wp_enqueue_script( 'wp-media-tutorial-media-frame',
-			plugin_dir_url( __FILE__ ) . 'js/media-frame.js',
-			array( 'media-views', 'media-models') );
+		wp_enqueue_style( 'highlight-js',
+			plugin_dir_url( __FILE__ ) . 'includes/highlight/styles/monokai_sublime.css' );
 
-		wp_enqueue_script( 'wp-media-tutorial-frame-with-region-handlers',
-			plugin_dir_url( __FILE__ ) . 'js/frame-with-region-handlers.js',
-			array( 'media-views', 'media-models') );
+		wp_enqueue_style( 'wp-media-backbone-tutorial',
+			plugin_dir_url( __FILE__ ) . 'style.css' );
+
+		wp_enqueue_script( 'wp-media-backbone-tutorial',
+			plugin_dir_url( __FILE__ ) . 'script.js',
+			array( 'media-views', 'media-models', 'highlight-js' ) );
 	}
 
 	/**

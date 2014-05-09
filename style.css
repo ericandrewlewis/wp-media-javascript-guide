@@ -1,0 +1,15 @@
+.example {
+	margin: 0 auto;
+	width: 80%;
+}
+.example h4 {
+	text-transform: uppercase;
+}
+.live-example {
+	background: white;
+	padding: 20px;
+}
+/* Hack to fix highlight.js being stupid */
+.coffeescript .javascript, .javascript .xml, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata, .xml .php, .php .xml {
+	opacity: 1;
+}
