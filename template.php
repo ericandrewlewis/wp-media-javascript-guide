@@ -93,6 +93,8 @@ $(&#039;.js--example-2-open-media-modal&#039;).click( function( event ) {
 });
 </code></pre>
 		<h4>In-page Markup</h4>
+<pre><code class="language-html">&lt;button class=&quot;js--example-2-open-media-modal&quot;&gt;Open a modal&lt;/button&gt;
+</code></pre>
 		<div class="live-example">
 			<button class="js--example-2-open-media-modal">Open a modal</button>
 			<script type="text/template" id="tmpl-modal-content">
