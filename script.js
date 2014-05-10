@@ -122,15 +122,15 @@
 			// that represents the region.
 			selector: '.region-1'
 		});
-		$('.js--example-3--render-region-in-a-mode').click( function( event ) {
+		$('.js--example-3--switch-region-to-a-mode').click( function( event ) {
 			event.preventDefault();
-			// Render a mode on the region to trigger the {region}:create
-			// event on the parent view.
-			RegionOne.render( 'a-mode' );
+			// Trigger a mode change on the region, which will hit callbacks
+			// on the RegionParentView ( RegionParentView.onCreateRegionInAMode() ).
+			RegionOne.mode( 'a-mode' );
 		});
-		$('.js--example-3--render-region-in-b-mode').click( function( event ) {
+		$('.js--example-3--switch-region-to-b-mode').click( function( event ) {
 			event.preventDefault();
-			RegionOne.render( 'b-mode' );
+			RegionOne.mode( 'b-mode' );
 		});
 	});
 

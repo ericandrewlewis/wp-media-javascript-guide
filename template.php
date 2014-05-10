@@ -113,19 +113,20 @@ $(&#039;.js--example-2--open-media-modal&#039;).click( function( event ) {
 	<p>A <strong>mode</strong> applies a transformed state to a region.</p>
 	<div class="example">
 		<h3>Example: Render a view in a region in two modes.</h3>
+		<p>One region is created. A callback is bound to clicking either button, which triggers a mode switch on the region, filling in the region with a different view for each mode.
 		<h4>Live Example</h4>
 		<div class="live-example">
 			<script type="text/template" id="tmpl-example-3-view-1">
-				<h1>Hi, I&#39;m a view inside a region in "a mode"!</h1>
+				<h1>Hi, I&#39;m a view inside a region in "a" mode!</h1>
 			</script>
 			<script type="text/template" id="tmpl-example-3-view-2">
-				<h1>Hi, I&#39;m a view inside a region in "b mode"!</h1>
+				<h1>Hi, I&#39;m a view inside a region in "b" mode!</h1>
 			</script>
 			<div class="example-3--region-parent-view">
 				<div class="region-1"></div>
 			</div>
-			<button class="js--example-3--render-region-in-a-mode">Render the region in "a mode"</button>
-			<button class="js--example-3--render-region-in-b-mode">Render the region in "b mode"</button>
+			<button class="js--example-3--switch-region-to-a-mode">Switch the region to "a" mode</button>
+			<button class="js--example-3--switch-region-to-b-mode">Render the region in "b" mode</button>
 		</div>
 		<h4>Template Markup</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-example-3-view-1&quot;&gt;
