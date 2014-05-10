@@ -74,6 +74,18 @@ class WPMT {
 		<span class="wp-media-buttons-icon"></span> Open a media frame with region renderers</a>
 		<?php
 	}
+
+	/**
+	 * Get a link to a section.
+	 */
+	public static function get_section_link( $section_name = '' ) {
+		$admin_url = get_admin_url( null, 'admin.php' );
+		$url = add_query_arg( array( 'page' => 'media-guide' ), $admin_url );
+		if ( ! empty( $section_name ) ) {
+			$url = add_query_arg( array( 'section' => $section_name ), $url );
+		}
+		return $url;
+	}
 }
 
 WPMT::get_instance();

@@ -5,22 +5,22 @@
 		<div class="dropdown-panel chapters-dropdown-panel">
 			<ol>
 				<li class="chapter">
-					<a href="admin.php?page=media-guide">Introduction</a>
+					<a href="<?php echo WPMT::get_section_link() ?>">Introduction</a>
 				</li>
 				<li class="chapter">
-					<a href="admin.php?page=media-guide&section=wp.Backbone.View">wp.Backbone.View</a>
+					<a href="<?php echo WPMT::get_section_link( 'wp.Backbone.View' ) ?>">wp.Backbone.View</a>
 				</li>
 				<li class="chapter">
-					<a href="admin.php?page=media-guide&section=wp.media.View.Modal">wp.media.View.Modal</a>
+					<a href="<?php echo WPMT::get_section_link( 'wp.media.View.Modal' ) ?>">wp.media.View.Modal</a>
 				</li>
 				<li class="chapter">
-					<a href="admin.php?page=media-guide&section=wp.media.controller.Region">wp.media.controller.Region</a>
+					<a href="<?php echo WPMT::get_section_link( 'wp.media.controller.Region' ) ?>">wp.media.controller.Region</a>
 				</li>
 				<li class="chapter">
-					<a href="admin.php?page=media-guide&section=wp.media.controller.StateMachine">wp.media.controller.StateMachine</a>
+					<a href="<?php echo WPMT::get_section_link( 'wp.media.controller.StateMachine' ) ?>">wp.media.controller.StateMachine</a>
 				</li>
 				<li class="chapter">
-					wp.media.controller.State
+					<a href="<?php echo WPMT::get_section_link( 'wp.media.controller.State' ) ?>">wp.media.controller.State</a>
 				</li>
 				<li class="chapter">
 					wp.media.controller.Library
