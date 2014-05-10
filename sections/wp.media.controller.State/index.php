@@ -1,5 +1,5 @@
 <h3>wp.media.controller.State</h3>
-<p>Extend directly from Backbone.Model.</p>
+<p>Extends directly from Backbone.Model.</p>
 <p>States control the modes of regions within the frame.</p>
 
 <div class="example">
