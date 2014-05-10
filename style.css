@@ -1,3 +1,34 @@
+.chapter-index {
+	background-color: #e1e1e1;
+	padding: 8px 12px 6px 12px;
+	position: relative;
+}
+.chapter-index .chapters-dropdown-trigger {
+	border: solid 1px transparent;
+	padding: 3px 3px 0;
+}
+.chapter-index.active .chapters-dropdown-trigger {
+	background-color: white;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px;
+	border: solid 1px #c6c4b8;
+	border-bottom: none;
+}
+
+.chapters-dropdown-panel {
+	display: none;
+	position: absolute;
+}
+.chapter-index.active .chapters-dropdown-panel {
+	background-color: white;
+	display: block;
+	left: 0;
+	right: 0;
+}
 .example {
 	margin: 0 auto;
 	width: 80%;
