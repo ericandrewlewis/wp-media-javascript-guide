@@ -5,8 +5,11 @@
 }
 .chapter-index .chapters-dropdown-trigger {
 	border: solid 1px transparent;
+	font-weight: 600;
 	padding: 3px 3px 0;
+	text-decoration: none;
 }
+
 .chapter-index.active .chapters-dropdown-trigger {
 	background-color: white;
 	-moz-border-radius-topleft: 3px;
