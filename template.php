@@ -17,7 +17,7 @@
 					<a href="admin.php?page=media-guide&section=wp.media.controller.Region">wp.media.controller.Region</a>
 				</li>
 				<li class="chapter">
-					media.controller.StateMachine
+					<a href="admin.php?page=media-guide&section=wp.media.controller.Region">wp.media.controller.StateMachine</a>
 				</li>
 				<li class="chapter">
 					media.controller.State
@@ -54,11 +54,11 @@
 	<script type="text/javascript"
 	        src="<?php echo plugins_url( 'sections/' . $section .  '/script.js', __FILE__ ); ?>"></script>
 	<div class="entry-template">
-		<h3>TITLE</h3>
-		<p>CONTENT</p>
+		<h3>Title</h3>
+		<p>Content</p>
 		<div class="example">
-			<h3>Example</h3>
-			<h4>LIVE EXAMPLE</h4>
+			<h3>Example: title</h3>
+			<h4>Live Example</h4>
 			<div class="live-example">
 			</div>
 			<h4>Template Markup</h4>
