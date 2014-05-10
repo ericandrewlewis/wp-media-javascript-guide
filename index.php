@@ -76,9 +76,9 @@ class WPMT {
 	}
 
 	/**
-	 * Get a link to a section.
+	 * Get a url for a section.
 	 */
-	public static function get_section_link( $section_name = '' ) {
+	public static function get_section_url( $section_name = '' ) {
 		$admin_url = get_admin_url( null, 'admin.php' );
 		$url = add_query_arg( array( 'page' => 'media-guide' ), $admin_url );
 		if ( ! empty( $section_name ) ) {
