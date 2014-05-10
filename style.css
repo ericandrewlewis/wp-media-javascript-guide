@@ -17,11 +17,23 @@
 	border-top-right-radius: 3px;
 	border: solid 1px #c6c4b8;
 	border-bottom: none;
+	position: relative;
+	z-index: 10;
 }
 
 .chapters-dropdown-panel {
 	display: none;
 	position: absolute;
+	border: solid 1px #e2e0d8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #ccc;
+	top: 25px;
 }
 .chapter-index.active .chapters-dropdown-panel {
 	background-color: white;

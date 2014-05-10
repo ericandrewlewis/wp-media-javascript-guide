@@ -16,7 +16,30 @@
 				<li class="chapter">
 					<a href="admin.php?page=media-guide&section=wp.media.controller.Region">wp.media.controller.Region</a>
 				</li>
-
+				<li class="chapter">
+					media.controller.StateMachine
+				</li>
+				<li class="chapter">
+					media.controller.State
+				</li>
+				<li class="chapter">
+					media.controller.Library
+				</li>
+				<li class="chapter">
+					media.view.Frame
+				</li>
+				<li class="chapter">
+					media.view.MediaFrame
+				</li>
+				<li class="chapter">
+					media.view.MediaFrame.Select
+				</li>
+				<li class="chapter">
+					media.view.MediaFrame.Post
+				</li>
+				<li class="chapter">
+					media.view.MediaFrame.ImageDetails
+				</li>
 			</ol>
 		</div>
 	</div>
