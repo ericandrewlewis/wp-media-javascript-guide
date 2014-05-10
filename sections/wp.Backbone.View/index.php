@@ -2,18 +2,8 @@
 <p>An extension of <code>Backbone.View</code>. All views in WordPress are built on top of this. A Subview Manager is baked in via <code>wp.Backbone.Subviews</code>.</p>
 <div class="example">
 	<h3>Example: Render a view with a subview</h3>
-	<h4>LIVE EXAMPLE</h4>
-	<div class="live-example">
-		<div class="view-1-container"></div>
-		<button class="js--render-view-1">Click to render the parent view</button>
-		<script type="text/template" id="tmpl-view-1">
-			A view template.
-			<div class="subview-container"></div>
-		</script>
-		<script type="text/template" id="tmpl-view-2">
-			A subview template.
-		</script>
-	</div>
+	<h4>LIVE EXAMPLE <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>">open in a new window</a></h4>
+	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>"></iframe>
 	<h4>TEMPLATE MARKUP</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-view-1&quot;&gt;
 	A view template.

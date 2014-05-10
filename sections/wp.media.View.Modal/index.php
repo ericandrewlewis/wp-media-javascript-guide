@@ -2,13 +2,8 @@
 <p>A view that creates a modal. The modal can be closed and reopened without changing markup (i.e. losing state). The default media experience uses it as a wrapper, however it can be used outside the media context.</p>
 <div class="example">
 	<h3>Example: Open a modal</h3>
-	<h4>LIVE EXAMPLE</h4>
-	<div class="live-example">
-		<button class="js--open-media-modal">Open a modal</button>
-		<script type="text/template" id="tmpl-modal-content">
-			<h1>Hi, I&#39;m a Modal!</h1>
-		</script>
-	</div>
+	<h4>LIVE EXAMPLE <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>">open in a new window</a></h4>
+	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>"></iframe>
 	<h4>Template Markup</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-modal-content&quot;&gt;
 	&lt;h1&gt;Hi, I&amp;#39;m a Modal!&lt;/h1&gt;

@@ -28,15 +28,15 @@ class WPMT {
 		add_action( 'media_buttons', array( $this, 'add_media_button' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
+
+		$this->maybe_bootstap_example_screen();
 	}
 
 	public function admin_menu() {
 		add_menu_page( 'Media Guide', 'Media Guide', 'manage_options', 'media-guide', array( $this, 'render_page' )  );
 	}
 
-	public function render_page() {
-		require( 'template.php' );
-	}
 	/**
 	 * Enqueue scripts.
 	 */
@@ -56,24 +56,70 @@ class WPMT {
 		wp_enqueue_style( 'wp-media-backbone-tutorial',
 			plugin_dir_url( __FILE__ ) . 'style.css' );
 
-		wp_enqueue_script( 'wp-media-backbone-tutorial',
-			plugin_dir_url( __FILE__ ) . 'script.js',
-			array( 'media-views', 'media-models', 'highlight-js' ) );
+		// Load the documentation javascript for a section page.
+		if ( self::is_section_page() ) {
+			wp_enqueue_script( 'wp-media-backbone-tutorial',
+				plugin_dir_url( __FILE__ ) . 'script.js',
+				array( 'media-views', 'media-models', 'highlight-js' ) );
+		}
+
+		// Load the example javascript and stylesheet for an example page.
+		if ( self::is_example_page() ) {
+			$example_id = self::get_current_example();
+
+			$example_script_src = sprintf( plugin_dir_url( __FILE__ ) . 'sections/%s/examples/%s/script.js',
+				WPMT::get_current_section(),
+				WPMT::get_current_example() );
+			wp_enqueue_script( 'wp-media-backbone-tutorial-example-' . $example_id,
+				$example_script_src,
+				array( 'media-views', 'media-models' ) );
+
+			$example_style_src = sprintf( plugin_dir_url( __FILE__ ) . 'sections/%s/examples/%s/style.css',
+				WPMT::get_current_section(),
+				WPMT::get_current_example() );
+
+			wp_enqueue_style( 'wp-media-backbone-tutorial-example-' . $example_id,
+				$example_style_src );
+		}
 	}
 
 	/**
-	 * Output more media buttons above the content editor.
+	 * Admin page render callback.
+	 *
+	 * If we're looking at an example page.
+	 * @return [type] [description]
 	 */
-	public function add_media_button() {
-		?>
-		<a href="#" id="open-media-modal-button" class="button open-media-modal add_media" title="Open a modal">
-		<span class="wp-media-buttons-icon"></span> Open a modal</a>
-		<a href="#" id="open-media-frame-button" class="button open-media-frame add_media" title="Open a media frame">
-		<span class="wp-media-buttons-icon"></span> Open a media frame</a>
-		<a href="#" id="open-media-frame-with-region-renderers-button" class="button open-media-frame-with-region-renderers add_media" title="Open a frame with region renderers">
-		<span class="wp-media-buttons-icon"></span> Open a media frame with region renderers</a>
-		<?php
+	public function render_page() {
+		if ( self::is_example_page() ) {
+			require( sprintf( 'sections/%s/examples/%s/index.php',
+				self::get_current_section(),
+				self::get_current_example()
+				) );
+			return;
+		}
+		require( 'template.php' );
 	}
+
+	/**
+	 * If we're on an example page, bootstrap a bit.
+	 * @return [type] [description]
+	 */
+	public function maybe_bootstap_example_screen() {
+		if ( ! self::is_example_page() )
+			return;
+		define( 'IFRAME_REQUEST', true );
+	}
+
+	public function admin_body_class( $classes ) {
+		if ( self::is_example_page() ) {
+			$classes .= ' wpmt-example ';
+		}
+		return $classes;
+	}
+
+	/**
+	 * Static Functions
+	 */
 
 	/**
 	 * Get a url for a section.
@@ -86,6 +132,45 @@ class WPMT {
 		}
 		return $url;
 	}
+
+	/**
+	 * Get a url for an example.
+	 */
+	public static function get_example_url( $section_name = '', $example_id = 1 ) {
+		$url = self::get_section_url( $section_name );
+		$url = add_query_arg( array( 'example' => $example_id ), $url );
+		return $url;
+	}
+
+	/**
+	 * Get the current section.
+	 */
+	public static function get_current_section() {
+		$section = ! empty( $_GET['section'] ) ? $_GET['section']: '';
+		return $section;
+	}
+
+	/**
+	 * Get the current example.
+	 */
+	public static function get_current_example() {
+		$example = ! empty( $_GET['example'] ) ? $_GET['example']: '';
+		return $example;
+	}
+
+	public static function is_example_page() {
+		return (bool) self::get_current_example();
+	}
+
+	public static function is_section_page() {
+		$is_section_page = null;
+		if ( (bool) self::get_current_section() && ! self::is_example_page() )
+			$is_section_page = true;
+		else
+			$is_section_page = false;
+		return $is_section_page;
+	}
+
 }
 
 WPMT::get_instance();

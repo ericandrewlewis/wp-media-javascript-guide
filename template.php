@@ -43,16 +43,7 @@
 			</ol>
 		</div>
 	</div>
-	<?php
-	if ( ! empty( $_GET['section'] ) ) {
-		$section = $_GET['section']; // todo: sanitize/whitelist
-	} else {
-		$section = 'introduction';
-	}
-	require( 'sections/' . $section . '/index.php' );
-	?>
-	<script type="text/javascript"
-	        src="<?php echo plugins_url( 'sections/' . $section .  '/script.js', __FILE__ ); ?>"></script>
+	<?php require( 'sections/' . WPMT::get_current_section() . '/index.php' ); ?>
 	<div class="entry-template">
 		<h3>Title</h3>
 		<p>Content</p>

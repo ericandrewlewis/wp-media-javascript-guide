@@ -37,6 +37,7 @@
 	-moz-box-shadow: 0 1px 2px #ccc;
 	box-shadow: 0 1px 2px #ccc;
 	top: 25px;
+	z-index: 1;
 }
 .chapter-index.active .chapters-dropdown-panel {
 	background-color: white;
@@ -44,6 +45,21 @@
 	left: 0;
 	right: 0;
 }
+.iframe-interactive-demo {
+	width: 100%;
+}
+.wpmt-example {
+	background-color: #fff;
+}
+.wpmt-example #adminmenuback,
+.wpmt-example #adminmenuwrap,
+.wpmt-example #wpfooter {
+	display: none;
+}
+.wpmt-example #wpcontent {
+	margin-left: 0;
+}
+
 .example {
 	margin: 0 auto;
 	width: 80%;
@@ -51,6 +67,11 @@
 .example h4 {
 	text-transform: uppercase;
 }
+.add-new-h2 {
+	text-transform: none;
+	text-decoration: none;
+}
+
 .entry-template {
 	display: none;
 }

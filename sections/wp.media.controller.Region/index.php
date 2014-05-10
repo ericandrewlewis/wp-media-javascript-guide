@@ -6,16 +6,8 @@
 <div class="example">
 	<h3>Example: Render a view in a region</h3>
 
-	<h4>LIVE EXAMPLE</h4>
-	<div class="live-example">
-		<script type="text/template" id="tmpl-example-1-view-1">
-			<h1>Hi, I&#39;m a view inside a region!</h1>
-		</script>
-		<div class="example-1--region-parent-view">
-			<div class="region-1"></div>
-		</div>
-		<button class="js--example-1--render-region">Render a view inside a region</button>
-	</div>
+	<h4>LIVE EXAMPLE <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>">open in a new window</a></h4>
+	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>"></iframe>
 	<h4>Template Markup</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-example-1-view-1&quot;&gt;
 	&lt;h1&gt;Hi, I&amp;#39;m a view inside a region!&lt;/h1&gt;
@@ -88,20 +80,8 @@
 <div class="example">
 	<h3>Example: Render a view in a region in two modes.</h3>
 	<p>One region is created. A callback is bound to clicking either button, which triggers a mode switch on the region, filling in the region with a different view for each mode.
-	<h4>Live Example</h4>
-	<div class="live-example">
-		<script type="text/template" id="tmpl-example-2-view-1">
-			<h1>Hi, I&#39;m a view inside a region in "a" mode!</h1>
-		</script>
-		<script type="text/template" id="tmpl-example-2-view-2">
-			<h1>Hi, I&#39;m a view inside a region in "b" mode!</h1>
-		</script>
-		<div class="example-2--region-parent-view">
-			<div class="region-1"></div>
-		</div>
-		<button class="js--example-2--switch-region-to-a-mode">Switch the region to "a" mode</button>
-		<button class="js--example-2--switch-region-to-b-mode">Render the region in "b" mode</button>
-	</div>
+	<h4>Live Example <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 2 ) ?>">open in a new window</a></h4>
+	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 2 ) ?>"></iframe>
 	<h4>Template Markup</h4>
 <pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-example-2-view-1&quot;&gt;
 	&lt;h1&gt;Hi, I&amp;#39;m a view inside a region in &quot;a mode&quot;!&lt;/h1&gt;

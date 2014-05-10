@@ -7,5 +7,16 @@
 			$('.chapter-index').toggleClass( 'active' );
 		});
 	});
+
+
+	$(document).ready( function() {
+		$('iframe').on( 'load', function( event ) {
+			var $iframe = $( event.currentTarget );
+			var innerHeight = $(event.currentTarget.contentWindow.document)
+				.find('#wpwrap')
+				.height();
+			$iframe.css( 'height', innerHeight );
+		});
+	});
 })(jQuery);
 
