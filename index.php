@@ -146,7 +146,7 @@ class WPMT {
 	 * Get the current section.
 	 */
 	public static function get_current_section() {
-		$section = ! empty( $_GET['section'] ) ? $_GET['section']: '';
+		$section = ! empty( $_GET['section'] ) ? $_GET['section']: 'introduction';
 		return $section;
 	}
 
