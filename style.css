@@ -46,10 +46,14 @@
 	right: 0;
 }
 .iframe-interactive-demo {
+	border: 10px solid #222;
+	box-sizing: border-box;
 	width: 100%;
 }
-.wpmt-example {
+.wpmt-example #wpwrap {
 	background-color: #fff;
+	box-sizing: border-box;
+	padding: 10px;
 }
 .wpmt-example #adminmenuback,
 .wpmt-example #adminmenuwrap,

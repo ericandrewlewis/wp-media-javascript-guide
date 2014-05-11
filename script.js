@@ -14,7 +14,7 @@
 			var $iframe = $( event.currentTarget );
 			var innerHeight = $(event.currentTarget.contentWindow.document)
 				.find('#wpwrap')
-				.height();
+				.outerHeight() + 20 /* arbitrary border on iframe */;
 			$iframe.css( 'height', innerHeight );
 		});
 	});
