@@ -25,7 +25,6 @@ class WPMT {
 	 * Setup action handlers.
 	 */
 	protected function __construct() {
-		add_action( 'media_buttons', array( $this, 'add_media_button' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
