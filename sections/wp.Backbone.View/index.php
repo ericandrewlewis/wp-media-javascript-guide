@@ -4,8 +4,8 @@
 	<h3>Example: Render a view with a subview</h3>
 	<h4>LIVE EXAMPLE <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>">open in a new window</a></h4>
 	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>"></iframe>
-	<h4>TEMPLATE MARKUP</h4>
-<pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-view-1&quot;&gt;
+	<h4>MARKUP</h4>
+<pre><code class="language-html"><?php the_section_example_markup( WPMT::get_current_section(), 1 ) ?>&lt;script type=&quot;text/template&quot; id=&quot;tmpl-view-1&quot;&gt;
 	A view template.
 	&lt;div class=&quot;subview-container&quot;&gt;&lt;/div&gt;
 &lt;/script&gt;

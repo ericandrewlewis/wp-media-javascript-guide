@@ -30,6 +30,9 @@ class WPMT {
 		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
 
 		$this->maybe_bootstap_example_screen();
+
+		$this->directory = new stdClass();
+		$this->directory->sections = plugin_dir_path( __FILE__ ) . 'sections/';
 	}
 
 	public function admin_menu() {
@@ -96,7 +99,7 @@ class WPMT {
 				) );
 			return;
 		}
-		require( 'template.php' );
+		require( plugin_dir_path( __FILE__ ) . 'templates/section.php' );
 	}
 
 	/**
@@ -170,6 +173,20 @@ class WPMT {
 		return $is_section_page;
 	}
 
+	public function the_section_example_markup( $section_id, $example_id ) {
+
+		$file_path = sprintf( '%ssections/%s/examples/%s/index.php',
+			plugin_dir_path( __FILE__ ),
+			$section_id,
+			$example_id );
+		$file_contents = file_get_contents( $file_path );
+		echo htmlentities( $file_contents );
+	}
+
 }
 
-WPMT::get_instance();
+function wpmt() {
+	return WPMT::get_instance();
+}
+
+wpmt();

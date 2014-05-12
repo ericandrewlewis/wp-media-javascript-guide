@@ -1,6 +1,6 @@
 (function($) {
 	$(document).ready( function() {
-		$('.js--example-1--render-region').click( function( event ) {
+		$('.js--render-region').click( function( event ) {
 			event.preventDefault();
 
 			// A region requires a parent view to live inside.
@@ -28,7 +28,7 @@
 					// Create a basic view constructor that binds to a template.
 					var RegionViewConstructor = wp.Backbone.View.extend({
 						// assign a compiled template function.
-						template: wp.template( 'example-1-view-1' )
+						template: wp.template( 'view-1' )
 					});
 					// Create the view for the region, which is automatically
 					// rendered later.
@@ -38,7 +38,7 @@
 			// Create an instance of the RegionParentView.
 			var RegionParentView = new RegionParentViewConstructor({
 				// Tie the view to an existing DOM element.
-				el: '.example-1--region-parent-view'
+				el: '.region-parent-view'
 			});
 			// Render the region parent view.
 			RegionParentView.render();

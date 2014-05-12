@@ -28,7 +28,7 @@
 				// Create a basic view constructor that binds to a template.
 				var RegionViewConstructor = wp.Backbone.View.extend({
 					// assign a compiled template function.
-					template: wp.template( 'example-2-view-1' )
+					template: wp.template( 'view-1' )
 				});
 				// Create the view for the region, which is automatically
 				// rendered later.
@@ -42,7 +42,7 @@
 				// Create a basic view constructor that binds to a template.
 				var RegionViewConstructor = wp.Backbone.View.extend({
 					// assign a compiled template function.
-					template: wp.template( 'example-2-view-2' )
+					template: wp.template( 'view-2' )
 				});
 				// Create the view for the region, which is automatically
 				// rendered later.
@@ -52,7 +52,7 @@
 		// Create an instance of the RegionParentView.
 		var RegionParentView = new RegionParentViewConstructor({
 			// Tie the view to an existing DOM element.
-			el: '.example-2--region-parent-view'
+			el: '.region-parent-view'
 		});
 		// Render the region parent view.
 		RegionParentView.render();
@@ -67,13 +67,13 @@
 			// that represents the region.
 			selector: '.region-1'
 		});
-		$('.js--example-2--switch-region-to-a-mode').click( function( event ) {
+		$('.js--switch-region-to-a-mode').click( function( event ) {
 			event.preventDefault();
 			// Trigger a mode change on the region, which will hit callbacks
 			// on the RegionParentView ( RegionParentView.onCreateRegionInAMode() ).
 			RegionOne.mode( 'a-mode' );
 		});
-		$('.js--example-2--switch-region-to-b-mode').click( function( event ) {
+		$('.js--switch-region-to-b-mode').click( function( event ) {
 			event.preventDefault();
 			RegionOne.mode( 'b-mode' );
 		});
