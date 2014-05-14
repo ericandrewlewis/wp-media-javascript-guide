@@ -89,7 +89,6 @@ class WPMT {
 	 * Admin page render callback.
 	 *
 	 * If we're looking at an example page.
-	 * @return [type] [description]
 	 */
 	public function render_page() {
 		if ( self::is_example_page() ) {
@@ -104,7 +103,6 @@ class WPMT {
 
 	/**
 	 * If we're on an example page, bootstrap a bit.
-	 * @return [type] [description]
 	 */
 	public function maybe_bootstap_example_screen() {
 		if ( ! self::is_example_page() )
@@ -118,10 +116,6 @@ class WPMT {
 		}
 		return $classes;
 	}
-
-	/**
-	 * Static Functions
-	 */
 
 	/**
 	 * Get a url for a section.
@@ -174,8 +168,16 @@ class WPMT {
 	}
 
 	public function the_section_example_markup( $section_id, $example_id ) {
-
 		$file_path = sprintf( '%ssections/%s/examples/%s/index.php',
+			plugin_dir_path( __FILE__ ),
+			$section_id,
+			$example_id );
+		$file_contents = file_get_contents( $file_path );
+		echo htmlentities( $file_contents );
+	}
+
+	public function the_section_example_javascript( $section_id, $example_id ) {
+		$file_path = sprintf( '%ssections/%s/examples/%s/script.js',
 			plugin_dir_path( __FILE__ ),
 			$section_id,
 			$example_id );

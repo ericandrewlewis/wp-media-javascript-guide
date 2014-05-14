@@ -4,35 +4,8 @@
 	<h3>Example: Open a modal</h3>
 	<h4>LIVE EXAMPLE <a class="add-new-h2" target="_blank" href="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>">open in a new window</a></h4>
 	<iframe class="iframe-interactive-demo" src="<?php echo WPMT::get_example_url( WPMT::get_current_section(), 1 ) ?>"></iframe>
-	<h4>Template Markup</h4>
-<pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;tmpl-modal-content&quot;&gt;
-	&lt;h1&gt;Hi, I&amp;#39;m a Modal!&lt;/h1&gt;
-&lt;/script&gt;
-</code></pre>
-		<p>Create a template for the modal content view.</p>
-		<h4>Javascript</h4>
-<pre><code class="language-javascript">// Create a modal view.
-var modal = new wp.media.view.Modal({
-	// A controller object is expected, but let&#039;s just pass
-	// a fake one to illustrate this proof of concept without
-	// getting console errors.
-	controller: { trigger: function() {} }
-});
-// Create a modal content view.
-var ModalContentView = wp.Backbone.View.extend({
-	template: wp.template( &#039;modal-content&#039; )
-});
-
-// When the user clicks a button, open a modal.
-$(&#039;.js--open-media-modal&#039;).click( function( event ) {
-	event.preventDefault();
-	// Assign the ModalContentView to the modal as the `content` subview.
-	// Proxies to View.views.set( &#039;.media-modal-content&#039;, content );
-	modal.content( new ModalContentView() );
-	// Out of the box, the modal is closed, so we need to open() it.
-	modal.open();
-});</code></pre>
-	<h4>In-page Markup</h4>
-<pre><code class="language-html">&lt;button class=&quot;js--open-media-modal&quot;&gt;Open a modal&lt;/button&gt;
-</code></pre>
+	<h4>Markup</h4>
+	<pre><code class="language-html"><?php wpmt()->the_section_example_markup( WPMT::get_current_section(), 1 ) ?></code></pre>
+	<h4>Javascript</h4>
+	<pre><code class="language-javascript"><?php wpmt()->the_section_example_javascript( WPMT::get_current_section(), 1 ) ?></code></pre>
 </div>
