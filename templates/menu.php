@@ -21,6 +21,9 @@
 				<a href="<?php echo WPMT::get_section_url( 'wp.media.controller.State' ) ?>">wp.media.controller.State</a>
 			</li>
 			<li class="chapter">
+				<a href="<?php echo WPMT::get_section_url( 'wp.media.view.UploaderWindow' ) ?>">wp.media.view.UploaderWindow</a>
+			</li>
+			<li class="chapter">
 				wp.media.controller.Library
 			</li>
 			<li class="chapter">
