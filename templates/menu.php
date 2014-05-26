@@ -6,6 +6,9 @@
 				<a href="<?php echo WPMT::get_section_url() ?>">Introduction</a>
 			</li>
 			<li class="chapter">
+				<a href="<?php echo WPMT::get_section_url( 'Old Media Modal') ?>">Old Media Modal</a>
+			</li>
+			<li class="chapter">
 				<a href="<?php echo WPMT::get_section_url( 'wp.Backbone.View' ) ?>">wp.Backbone.View</a>
 			</li>
 			<li class="chapter">
