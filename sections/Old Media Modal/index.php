@@ -1,9 +1,8 @@
 <h3>Old Media Modal</h3>
 <p>As WordPress is fully backwards compatible, the previous media library is still available for use. </p>
 <div class="example">
-	<h3>Boilerplate</h3>
-	<pre><code class="language-php">
-&lt;?php
+	<h3>Code to enable old media modal in WP 3.5+</h3>
+	<pre><code class="language-php">&lt;?php
 /**
  * Remove the new media button, add the old media button.
  */
@@ -23,6 +22,5 @@ function old_media_buttons( $editor_id = &#039;content&#039; ) {
 		esc_attr__( &#039;Add Media&#039; ),
 		sprintf( &#039;Upload/Insert &lt;img src=&quot;%s&quot; width=&quot;15&quot; height=&quot;15&quot; /&gt;&#039;,
 			esc_url( admin_url( &#039;images/media-button.png?ver=20111005&#039; ) ) ) );
-}
-	</code></pre>
+}</code></pre>
 </div>
