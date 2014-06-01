@@ -1,0 +1,1 @@
+<div class="dragzone">Drag files here...</div>
