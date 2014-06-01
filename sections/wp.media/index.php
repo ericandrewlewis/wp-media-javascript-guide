@@ -1,0 +1,230 @@
+<h3>wp.media</h3>
+<p>The WordPress Javascript namespace for all media elements.</p>
+<table>
+	<thead>
+		<th>
+			Property
+		</th>
+		<th>
+			Description
+		</th>
+	</thead>
+	<tr>
+		<td>
+			media( attributes )
+		</td>
+		<td>
+			Creates and returns a media frame with the given attributes.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.View
+		</td>
+		<td>
+			The base media view.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.ajax
+		</td>
+		<td>
+			Alias of wp.ajax.send
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.attachment( id )
+		</td>
+		<td>
+			Returns an existing attachment (or creates one if it doesn't exist) in the wp.media.Attachments.all collection.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.audio
+		</td>
+		<td>
+			uh
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.coerce
+		</td>
+		<td>
+			A helper mixin function to avoid truthy and falsey values being passed as an input that expects booleans.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.controller
+		</td>
+		<td>
+			Namespace for storing controllers. <BR>
+			wp.media.controller.StateMachine wp.media.controller.State wp.media.controller.Library wp.media.controller.ImageDetails wp.media.controller.GalleryEdit wp.media.controller.GalleryAdd wp.media.controller.CollectionEdit wp.media.controller.CollectionAdd wp.media.controller.FeaturedImage wp.media.controller.ReplaceImage wp.media.controller.EditImage wp.media.controller.MediaLibrary wp.media.controller.Embed wp.media.controller.Cropper wp.media.controller.AudioDetails wp.media.controller.VideoDetails
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.editor
+		</td>
+		<td>
+			Manages frames that are related to TinyMCE instances(editors) and inserting content into the frame after selection.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.events
+		</td>
+		<td>
+			A shared event bus used to provide events into the media workflows that 3rd-party devs can use to hook in. A clone of Backbone.Events.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.featuredImage
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.fit
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.frame
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.frames
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.gallery
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.mixin
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.model
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.playlist
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.post
+		</td>
+		<td>
+			Alias of wp.ajax.post. Sends a POST request to WordPress.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.query( props )
+		</td>
+		<td>
+			Return a new Attachments collection(wp.media.model.Attachments) with the given query props.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.selectionSync
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.string
+		</td>
+		<td>
+			Helper functions to create strings. audio, image, link, props, video.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.template( id )
+		</td>
+		<td>
+			Fetches and compiles a micro-template by id, proxying to _.template. <br>
+			Expects a prefix of 'tmpl-'. e.g. template( 'attachment-details' ) selects '#tmpl-attachment-details'
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.transition
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.truncate
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.video
+		</td>
+		<td>
+			um
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.view
+		</td>
+		<td>
+			Namespace for storing all media Backbone views.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			media.view.settings
+		</td>
+		<td>
+			Localization strings and user settings.
+		</td>
+	</tr>
+</table>
