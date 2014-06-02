@@ -91,3 +91,7 @@
 .coffeescript .javascript, .javascript .xml, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata, .xml .php, .php .xml {
 	opacity: 1;
 }
+
+code {
+	background-color: transparent;
+}
