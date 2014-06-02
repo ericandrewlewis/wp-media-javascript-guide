@@ -94,6 +94,7 @@
 
 code {
 	background-color: transparent;
+	overflow: scroll;
 }
 
 dd {
