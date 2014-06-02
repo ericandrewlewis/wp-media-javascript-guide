@@ -95,3 +95,7 @@
 code {
 	background-color: transparent;
 }
+
+dd {
+	margin-left: 40px;
+}
