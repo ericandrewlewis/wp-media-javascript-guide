@@ -8,7 +8,7 @@
 	<dt><code>media.ajax</code></dt>
 	<dd>Alias of wp.ajax.send</dd>
 	<dt><code>media.attachment( id )</code></dt>
-	<dd>Returns an existing attachment (or creates one if it doesn't exist) in the wp.media.Attachments.all collection.</dd>
+	<dd>Returns an existing attachment (or creates one if it doesn't exist) in the <code>wp.media.Attachments.all</code> collection. Does not <code>fetch()</code> from the server surprisingly.</dd>
 	<dt><code>media.audio</code></dt>
 	<dd>uh</dd>
 	<dt><code>media.coerce</code></dt>
@@ -46,7 +46,7 @@
 	<dd>Helper functions to create strings. audio, image, link, props, video.</dd>
 	<dt><code>media.template( id )</code></dt>
 	<dd>Fetches and compiles a micro-template by id, proxying to <code>_.template</code><br>
-		Expects a prefix of 'tmpl-'. e.g. template( 'attachment-details' ) selects '#tmpl-attachment-details'</dd>
+		Expects a prefix of <code>'tmpl-'</code>. e.g. <code>template( 'attachment-details' )</code> equals a selector of <code>'#tmpl-attachment-details'</code>.</dd>
 	<dt><code>media.transition</code></dt>
 	<dd>um</dd>
 	<dt><code>media.truncate</code></dt>
