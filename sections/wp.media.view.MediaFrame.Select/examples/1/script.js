@@ -4,18 +4,31 @@
 			// Accepts an optional object hash to override default values.
 			var frame = new wp.media.view.MediaFrame.Select({
 				// Modal title
-				title: 'Select an image',
+				title: 'Select profile background',
+
 				// Enable/disable multiple select
 				multiple: true,
-				//
+
+				// Library WordPress query arguments.
 				library: {
 					order: 'ASC',
-					orderby: 'title', // [ 'name', 'author', 'date', 'title', 'modified', 'uploadedTo', 'id', 'post__in', 'menuOrder' ]
-					// mime type.
-					type: 'image', // [ 'audio', 'video', 'image' ]
+
+					// [ 'name', 'author', 'date', 'title', 'modified', 'uploadedTo',
+					// 'id', 'post__in', 'menuOrder' ]
+					orderby: 'title',
+
+					// mime type. [ 'audio', 'video', 'image' ]
+					type: 'image',
+
 					// Searches the attachment title.
-					search: 'term'
-					// uploadedTo:
+					search: null,
+
+					// Attached to a specific post (ID).
+					uploadedTo: null
+				},
+
+				button: {
+					text: 'Set profile background'
 				}
 			});
 
@@ -41,27 +54,32 @@
 
 			// Fires when a user has selected attachment(s) and clicked the select button.
 			// @see media.view.MediaFrame.Post.mainInsertToolbar()
-			frame.on( 'select', function() {} );
+			frame.on( 'select', function() {
+				var selectionCollection = frame.state().get('selection');
+			} );
 
 			// Fires when a state activates.
 			frame.on( 'activate', function() {} );
 
-			// Fires when a new mode is deactivated on a region.
+			// Fires when a mode is deactivated on a region.
 			frame.on( '{region}:deactivate', function() {} );
+			// and a more specific event including the mode.
+			frame.on( '{region}:deactivate:{mode}', function() {} );
 
-			// Fires when a new mode is activated on a region.
+			// Fires when a region is ready for its view to be created.
+			frame.on( '{region}:create', function() {} );
+			// and a more specific event including the mode.
+			frame.on( '{region}:create:{mode}', function() {} );
+
+			// Fires when a region is ready for its view to be rendered.
+			frame.on( '{region}:render', function() {} );
+			// and a more specific event including the mode.
+			frame.on( '{region}:render:{mode}', function() {} );
+
+			// Fires when a new mode is activated (after it has been rendered) on a region.
 			frame.on( '{region}:activate', function() {} );
-
-			frame.on( 'all', function() {
-				console.log( arguments );
-			} );
-
-			frame.on( 'all', function() {
-				if ( arguments[0] === 'content:activate')
-					debugger;
-			} );
-
-
+			// and a more specific event including the mode.
+			frame.on( '{region}:activate:{mode}', function() {} );
 
 			// Get an object representing the current state.
 			frame.state();
@@ -71,7 +89,6 @@
 
 			// Open the modal.
 			frame.open();
-			debugger;
 		});
 	});
 })(jQuery);
