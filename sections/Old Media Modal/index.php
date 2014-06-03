@@ -1,7 +1,7 @@
 <h3>Old Media Modal</h3>
 <p>As WordPress is fully backwards compatible, the previous media library is still available for use. </p>
 <div class="example">
-	<h3>Code to enable old media modal in WP 3.5+</h3>
+	<h4>Enable 3.5- media modal in WP 3.5+</h4>
 	<pre><code class="language-php">&lt;?php
 /**
  * Remove the new media button, add the old media button.
