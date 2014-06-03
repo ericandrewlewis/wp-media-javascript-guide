@@ -1,13 +1,13 @@
 (function($) {
 	$(document).ready( function() {
-		var uploaderWindow = new media.view.UploaderWindow({
+		var uploaderWindow = new wp.media.view.UploaderWindow({
 			controller: { trigger: function() {}, on: function() {} },
 			uploader: {
-				dropzone:  $('body'),
-				container: $('body')
+				dropzone:  $('.dragzone'),
+				container: $('.dragzone')
 			}
 		}).render();
 		uploaderWindow.ready();
-		$('body').append( uploaderWindow.el );
+		$('.dragzone').append( uploaderWindow.el );
 	});
 })(jQuery);

@@ -2,48 +2,15 @@
 	<a class="dropdown-trigger chapters-dropdown-trigger" href="#">Sections &#x25BE;</a>
 	<div class="dropdown-panel chapters-dropdown-panel">
 		<ol>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url() ?>">Introduction</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'Old Media Modal') ?>">Old Media Modal</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.Backbone.View' ) ?>">wp.Backbone.View</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.media.View.Modal' ) ?>">wp.media.View.Modal</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.media.controller.Region' ) ?>">wp.media.controller.Region</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.media.controller.StateMachine' ) ?>">wp.media.controller.StateMachine</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.media.controller.State' ) ?>">wp.media.controller.State</a>
-			</li>
-			<li class="chapter">
-				<a href="<?php echo WPMT::get_section_url( 'wp.media.view.UploaderWindow' ) ?>">wp.media.view.UploaderWindow</a>
-			</li>
-			<li class="chapter">
-				wp.media.controller.Library
-			</li>
-			<li class="chapter">
-				wp.media.view.Frame
-			</li>
-			<li class="chapter">
-				wp.media.view.MediaFrame
-			</li>
-			<li class="chapter">
-				wp.media.view.MediaFrame.Select
-			</li>
-			<li class="chapter">
-				wp.media.view.MediaFrame.Post
-			</li>
-			<li class="chapter">
-				wp.media.view.MediaFrame.ImageDetails
-			</li>
+			<?php
+			$directory_contents = scandir( wpmt()->directory->sections );
+			foreach ( $directory_contents as $directory_content ) {
+				if ( strpos( $directory_content, '.') === 0 )
+					continue;
+				?><li class="chapter">
+				<a href="<?php echo WPMT::get_section_url( $directory_content ) ?>"><?php echo $directory_content ?></a>
+				</li><?php
+			} ?>
 		</ol>
 	</div>
 </div>

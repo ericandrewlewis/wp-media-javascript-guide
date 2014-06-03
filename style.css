@@ -92,8 +92,11 @@
 	opacity: 1;
 }
 
-.region-1 {
-	border: 1px dashed #ddd;
-	margin-bottom: 1em;
-	min-height: 100px;
+code {
+	background-color: transparent;
+	overflow: scroll;
+}
+
+dd {
+	margin-left: 40px;
 }
