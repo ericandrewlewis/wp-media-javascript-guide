@@ -111,3 +111,9 @@ p code {
 .add-new-h2 {
 	vertical-align: middle;
 }
+
+figure {
+	margin: 0 auto;
+	max-width: 600px;
+	text-align: center;
+}
