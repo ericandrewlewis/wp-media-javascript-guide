@@ -1,5 +1,5 @@
 <h3>wp.media.events</h3>
-<p>A shared event bus used to provide events into the media workflows that 3rd-party devs can use to hook in. A clone of Backbone.Events.</p>
+<p>A shared event bus used to provide events into the media workflows that 3rd-party scripts can use to hook in. A clone of Backbone.Events.</p>
 <div class="example">
 	<h3>Example: Tap into broadcast events.</h3>
 	<pre><code class="language-php">&lt;?php
