@@ -37,13 +37,13 @@
 			// @see media.view.Modal.open()
 			frame.on( 'open', function() {} );
 
-			// Fires when the modal closes.
-			// @see media.view.Modal.close()
-			frame.on( 'close', function() {} );
-
 			// Fires when the modal closes via the escape key.
 			// @see media.view.Modal.close()
 			frame.on( 'escape', function() {} );
+
+			// Fires when the modal closes.
+			// @see media.view.Modal.close()
+			frame.on( 'close', function() {} );
 
 			// Fires when a user has selected attachment(s) and clicked the insert button.
 			// @see media.view.MediaFrame.Post.mainInsertToolbar()

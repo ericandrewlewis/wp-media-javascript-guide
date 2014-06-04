@@ -25,7 +25,7 @@
 	<dt><code>media.fit</code></dt>
 	<dd>um</dd>
 	<dt><code>media.frame</code></dt>
-	<dd>um</dd>
+	<dd>A reference to the last media frame instantiated in <code>wp.media()</code>.</dd>
 	<dt><code>media.frames</code></dt>
 	<dd>um</dd>
 	<dt><code>media.gallery</code></dt>
