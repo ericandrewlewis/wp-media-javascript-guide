@@ -19,7 +19,7 @@
 	<dt><code>media.editor</code></dt>
 	<dd>Manages frames that are related to TinyMCE instances(editors) and inserting content into the frame after selection.</dd>
 	<dt><code>media.events</code></dt>
-	<dd>A shared event bus used to provide events into the media workflows that 3rd-party devs can use to hook in. A clone of Backbone.Events.</dd>
+	<dd>A shared event bus used to provide events into the media workflows that 3rd-party devs can use to hook in. A clone of <code>Backbone.Events</code>.</dd>
 	<dt><code>media.featuredImage</code></dt>
 	<dd>um</dd>
 	<dt><code>media.fit</code></dt>
@@ -37,9 +37,9 @@
 	<dt><code>media.playlist</code></dt>
 	<dd>um</dd>
 	<dt><code>media.post</code></dt>
-	<dd>Alias of wp.ajax.post. Sends a POST request to WordPress.</dd>
+	<dd>Alias of <code>wp.ajax.post</code>. Sends a POST request to WordPress.</dd>
 	<dt><code>media.query( props )</code></dt>
-	<dd>Return a new Attachments collection(wp.media.model.Attachments) with the given query props.</dd>
+	<dd>Return a new attachments collection(<code>wp.media.model.Attachments</code>) with the given query properties.</dd>
 	<dt><code>media.selectionSync</code></dt>
 	<dd>um</dd>
 	<dt><code>media.string</code></dt>
