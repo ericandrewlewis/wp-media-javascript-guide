@@ -14,7 +14,7 @@
 					// 'id', 'post__in', 'menuOrder' ]
 					orderby: 'title',
 
-					// mime type. [ 'audio', 'video', 'image' ]
+					// mime type. e.g. 'image', 'image/jpeg'
 					type: 'image',
 
 					// Searches the attachment title.
