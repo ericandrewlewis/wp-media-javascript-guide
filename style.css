@@ -117,3 +117,8 @@ figure {
 	max-width: 600px;
 	text-align: center;
 }
+.inheritance-info {
+	color: #777;
+	font-style: italic;
+	margin-left: 10px;
+}
