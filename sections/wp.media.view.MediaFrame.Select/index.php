@@ -1,19 +1,19 @@
 <h3>wp.media.view.MediaFrame.Select</h3>
-<p>A workflow dffor choosing a single attachment from the media library.</p>
+<p>A workflow for choosing a single attachment from the media library.</p>
 <h3>Properties</h3>
 <dl>
-	<dt><code>content<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `content` region controller object.</dd>
-	<dt><code>menu<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `menu` region controller object.</dd>
-	<dt><code>title<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `title` region object</dd>
-	<dt><code>toolbar<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `toolbar` region object</dd>
-	<dt><code>router<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `router` region object</dd>
-	<dt><code>views<span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The `router` region object</dd>
+	<dt><code>content</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
+	<dd>The <code>content</code> region controller object.</dd>
+	<dt><code>menu</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
+	<dd>The <code>menu</code> region controller object.</dd>
+	<dt><code>title</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
+	<dd>The <code>title</code> region object</dd>
+	<dt><code>toolbar</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
+	<dd>The <code>toolbar</code> region object</dd>
+	<dt><code>router</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
+	<dd>The <code>router</code> region object</dd>
+	<dt><code>views</code><span class="inheritance-info">inherited from wp.Backbone.View</span></dt>
+	<dd>A subview manager. Instance of <code>wp.Backbone.Subviews</code>.</dd>
 </dl>
 <h3>Methods</h3>
 <dl>
