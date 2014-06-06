@@ -186,6 +186,13 @@ class WPMT {
 		echo htmlentities( $file_contents );
 	}
 
+	public function the_section_link( $section_id ) {
+		printf(
+			'<a href="%s">%s</a>',
+			self::get_section_url( $section_id ),
+			$section_id );
+	}
+
 }
 
 function wpmt() {
