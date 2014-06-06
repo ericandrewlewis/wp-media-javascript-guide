@@ -32,6 +32,7 @@ class WPMT {
 		$this->maybe_bootstap_example_screen();
 
 		$this->directory = new stdClass();
+		$this->directory->plugin_root = plugin_dir_path( __FILE__ );
 		$this->directory->sections = plugin_dir_path( __FILE__ ) . 'sections/';
 	}
 
