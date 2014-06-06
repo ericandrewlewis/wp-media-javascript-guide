@@ -186,11 +186,20 @@ class WPMT {
 		echo htmlentities( $file_contents );
 	}
 
-	public function the_section_link( $section_id ) {
-		printf(
-			'<a href="%s">%s</a>',
+	public function get_section_link( $section_id ) {
+		return sprintf( '<a href="%s">%s</a>',
 			self::get_section_url( $section_id ),
 			$section_id );
+	}
+
+	public function the_section_link( $section_id ) {
+		echo self::get_section_link( $section_id );
+	}
+
+	public function inherited_from_text( $object ) {
+		printf( '<span class="inheritance-info">inherited from <code>%s</code></span>',
+			self::get_section_link( $object ) );
+
 	}
 
 }

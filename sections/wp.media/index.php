@@ -5,8 +5,8 @@
 	<dd>Creates and returns a media frame with the given attributes.</dd>
 	<dt><code>media.View</code></dt>
 	<dd>The base media view.</dd>
-	<dt><code>media.ajax()</code></dt>
-	<dd>Alias of wp.ajax.send</dd>
+	<dt><code>media.ajax()</code><span class="inheritance-info">Alias of <code>wp.ajax.send</code>.</span></dt>
+	<dd>Send a POST request to WordPress.</dd>
 	<dt><code>media.attachment( id )</code></dt>
 	<dd>Returns an existing attachment (or creates one if it doesn't exist) in the <code>wp.media.Attachments.all</code> collection. Does not <code>fetch()</code> from the server surprisingly.</dd>
 	<dt><code>media.audio</code></dt>
@@ -25,7 +25,7 @@
 	<dt><code>media.fit()</code></dt>
 	<dd>Scales a set of dimensions to fit within bounding dimensions.</dd>
 	<dt><code>media.frame</code></dt>
-	<dd>A reference to the last media frame instantiated in <code>wp.media()</code>.</dd>
+	<dd>A reference to the last media frame instantiated via <code>wp.media()</code>.</dd>
 	<dt><code>media.frames</code></dt>
 	<dd>um</dd>
 	<dt><code>media.gallery</code></dt>
@@ -36,8 +36,8 @@
 	<dd>Namespace containing media models.</dd>
 	<dt><code>media.playlist</code></dt>
 	<dd>um</dd>
-	<dt><code>media.post</code></dt>
-	<dd>Alias of <code>wp.ajax.post</code>. Sends a POST request to WordPress.</dd>
+	<dt><code>media.post</code><span class="inheritance-info">Alias of <code>wp.ajax.post</code>.</span></dt>
+	<dd>Send a POST request to WordPress.</dd>
 	<dt><code>media.query( props )</code></dt>
 	<dd>Return a new attachments collection(<code>wp.media.model.Attachments</code>) with the given query properties.</dd>
 	<dt><code>media.selectionSync</code></dt>

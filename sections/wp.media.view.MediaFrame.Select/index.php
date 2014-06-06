@@ -2,27 +2,31 @@
 <p>A workflow for choosing a single attachment from the media library.</p>
 <h3>Properties</h3>
 <dl>
-	<dt><code>content</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The <code>content</code> region controller object.</dd>
-	<dt><code>menu</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The <code>menu</code> region controller object.</dd>
-	<dt><code>title</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The <code>title</code> region object</dd>
-	<dt><code>toolbar</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The <code>toolbar</code> region object</dd>
-	<dt><code>router</code><span class="inheritance-info">inherited from wp.media.view.Frame</span></dt>
-	<dd>The <code>router</code> region object</dd>
-	<dt><code>views</code><span class="inheritance-info">inherited from wp.Backbone.View</span></dt>
+	<dt><code>content</code><?php WPMT::inherited_from_text( 'wp.media.view.Frame' ) ?></dt>
+	<dd>The <code>content</code> region controller object. See <code><?php WPMT::the_section_link( 'wp.media.controller.Region' ) ?></code>.</dd>
+	<dt><code>menu</code><?php WPMT::inherited_from_text( 'wp.media.view.Frame' ) ?></dt>
+	<dd>The <code>menu</code> region controller object. See <code><?php WPMT::the_section_link( 'wp.media.controller.Region' ) ?></code>.</dd>
+	<dt><code>title</code><?php WPMT::inherited_from_text( 'wp.media.view.Frame' ) ?></dt>
+	<dd>The <code>title</code> region controller object. See <code><?php WPMT::the_section_link( 'wp.media.controller.Region' ) ?></code>.</dd>
+	<dt><code>toolbar</code><?php WPMT::inherited_from_text( 'wp.media.view.Frame' ) ?></dt>
+	<dd>The <code>toolbar</code> region controller object. See <code><?php WPMT::the_section_link( 'wp.media.controller.Region' ) ?></code>.</dd>
+	<dt><code>router</code><?php WPMT::inherited_from_text( 'wp.media.view.Frame' ) ?></dt>
+	<dd>The <code>router</code> region controller object. See <code><?php WPMT::the_section_link( 'wp.media.controller.Region' ) ?></code>.</dd>
+	<dt><code>views</code><?php WPMT::inherited_from_text( 'wp.Backbone.View' ) ?></dt>
 	<dd>A subview manager. Instance of <code>wp.Backbone.Subviews</code>.</dd>
 </dl>
 <h3>Methods</h3>
 <dl>
-	<dt><code>state( state )</code><span class="inheritance-info">inherited from wp.media.controller.StateMachine</span></dt>
+	<dt><code>open()</code><?php WPMT::inherited_from_text( 'wp.media.view.MediaFrame' ) ?></dt>
+	<dd>Open the frame in a modal.</dd>
+	<dt><code>close()</code><?php WPMT::inherited_from_text( 'wp.media.view.MediaFrame' ) ?></dt>
+	<dd>Close the modal.</dd>
+	<dt><code>state( state )</code><?php WPMT::inherited_from_text( 'wp.media.controller.StateMachine' ) ?></dt>
 	<dd>Get a state object. <br>Defaults to the current state; if a state ID is supplied, returns that state.</dd>
-	<dt><code>setState( state )</code><span class="inheritance-info">inherited from wp.media.controller.StateMachine</span></dt>
+	<dt><code>setState( state )</code><?php WPMT::inherited_from_text( 'wp.media.controller.StateMachine' ) ?></dt>
 	<dd>Set the state.<br>
 		Triggers an `activate` event on the state, and a `deactivate` event on the previous state.</dd>
-	<dt><code>lastState()</code><span class="inheritance-info">inherited from wp.media.controller.StateMachine</span></dt>
+	<dt><code>lastState()</code><?php WPMT::inherited_from_text( 'wp.media.controller.StateMachine' ) ?></dt>
 	<dd>Get the previously active state object.</dd>
 </dl>
 <div class="example">
