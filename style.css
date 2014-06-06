@@ -50,21 +50,21 @@
 	box-sizing: border-box;
 	width: 100%;
 }
-.wpmt-example #wpwrap {
+.WPMJG-example #wpwrap {
 	background-color: #fff;
 	box-sizing: border-box;
 	padding: 10px;
 }
-.wpmt-example #adminmenuback,
-.wpmt-example #adminmenuwrap,
-.wpmt-example #wpfooter {
+.WPMJG-example #adminmenuback,
+.WPMJG-example #adminmenuwrap,
+.WPMJG-example #wpfooter {
 	display: none;
 }
-.wpmt-example #wpcontent {
+.WPMJG-example #wpcontent {
 	margin-left: 0;
 }
 
-.wpmt-example #wpbody-content {
+.WPMJG-example #wpbody-content {
 	padding-bottom: 0;
 }
 

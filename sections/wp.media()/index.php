@@ -5,8 +5,8 @@ var selectFrame = wp.media({
 	// Accepts [ 'select', 'post', 'image', 'audio', 'video' ]
 	frame: 'select'
 }); </code></pre>
-See <?php WPMT::the_section_link( 'wp.media.view.MediaFrame.Post' ) ?>,
-<?php WPMT::the_section_link( 'wp.media.view.MediaFrame.Select' ) ?>,
-<?php WPMT::the_section_link( 'wp.media.view.MediaFrame.ImageDetails' ) ?>,
-<?php WPMT::the_section_link( 'wp.media.view.MediaFrame.AudioDetails' ) ?>,
-<?php WPMT::the_section_link( 'wp.media.view.MediaFrame.VideoDetails' ) ?>
+See <?php WPMJG::the_section_link( 'wp.media.view.MediaFrame.Post' ) ?>,
+<?php WPMJG::the_section_link( 'wp.media.view.MediaFrame.Select' ) ?>,
+<?php WPMJG::the_section_link( 'wp.media.view.MediaFrame.ImageDetails' ) ?>,
+<?php WPMJG::the_section_link( 'wp.media.view.MediaFrame.AudioDetails' ) ?>,
+<?php WPMJG::the_section_link( 'wp.media.view.MediaFrame.VideoDetails' ) ?>
