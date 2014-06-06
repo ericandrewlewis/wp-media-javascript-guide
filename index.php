@@ -2,8 +2,9 @@
 /*
 Plugin Name: WordPress Media Javascript Guide
 Author: Eric Andrew Lewis
+Author URI: http://ericandrewlewis.com
 Version: 0.1
-Plugin URI: http://github/ericandrewlewis/wordpress-media-javascript-guide
+Plugin URI: http://github.com/ericandrewlewis/wp-media-javascript-guide
 Description: Enabling this WordPress plugin will create a top-level admin page "Media Guide," where you'll find documentation on Javascript design patterns and reusable elements from the media experience.
 */
 
