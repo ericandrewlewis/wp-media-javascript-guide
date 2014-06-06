@@ -1,5 +1,11 @@
 <h3>wp.media.view.MediaFrame.Select</h3>
-<p>Extends <code>Backbone.View</code>, <code><?php WPMJG::the_section_link( 'wp.Backbone.View' ) ?></code>, <code>wp.media.View</code>, <code>wp.media.Frame</code>, <code>wp.media.MediaFrame</code>. Mixes wp.media.controller.StateMachine.</p>
+<p>Extends <code>Backbone.View</code>,
+	<code><?php WPMJG::the_section_link( 'wp.Backbone.View' ) ?></code>,
+	<code><?php WPMJG::the_section_link( 'wp.media.View' ) ?></code>,
+	<code><?php WPMJG::the_section_link( 'wp.media.Frame' ) ?></code>,
+	<code><?php WPMJG::the_section_link( 'wp.media.MediaFrame' ) ?></code>.
+	Mixes <code><?php WPMJG::the_section_link( 'wp.media.controller.StateMachine' ) ?></code>.
+</p>
 <p>A workflow for choosing a single attachment from the media library.</p>
 <h3>Properties</h3>
 <dl>
