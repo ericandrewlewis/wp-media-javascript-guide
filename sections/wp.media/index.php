@@ -27,11 +27,11 @@
 	<dt><code>media.frame</code></dt>
 	<dd>A reference to the last media frame instantiated via <code>wp.media()</code>.</dd>
 	<dt><code>media.frames</code></dt>
-	<dd>um</dd>
+	<dd>List of current media frames.</dd>
 	<dt><code>media.gallery</code></dt>
 	<dd>Manages modeling of gallery shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.mixin</code></dt>
-	<dd>um</dd>
+	<dd>Mixin object that includes common functions for manipulating mediaelement.js players</dd>
 	<dt><code>media.model</code></dt>
 	<dd>Namespace containing media models.</dd>
 	<dt><code>media.playlist</code></dt>
@@ -50,7 +50,7 @@
 	<dt><code>media.transition</code></dt>
 	<dd>um</dd>
 	<dt><code>media.truncate()</code></dt>
-	<dd>um</dd>
+	<dd>Truncates a string by injecting an ellipsis into the middle.</dd>
 	<dt><code>media.video</code></dt>
 	<dd>Manages modeling of video shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.view</code></dt>
