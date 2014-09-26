@@ -10,7 +10,7 @@
 	<dt><code>media.attachment( id )</code></dt>
 	<dd>Returns an existing attachment (or creates one if it doesn't exist) in the <code>wp.media.Attachments.all</code> collection. Does not <code>fetch()</code> from the server surprisingly.</dd>
 	<dt><code>media.audio</code></dt>
-	<dd>uh</dd>
+	<dd>Manages modeling of audio shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.coerce()</code></dt>
 	<dd>A helper mixin function to avoid truthy and falsey values being passed as an input that expects booleans.</dd>
 	<dt><code>media.controller</code></dt>
@@ -27,15 +27,15 @@
 	<dt><code>media.frame</code></dt>
 	<dd>A reference to the last media frame instantiated via <code>wp.media()</code>.</dd>
 	<dt><code>media.frames</code></dt>
-	<dd>um</dd>
+	<dd>List of current media frames.</dd>
 	<dt><code>media.gallery</code></dt>
-	<dd>um</dd>
+	<dd>Manages modeling of gallery shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.mixin</code></dt>
-	<dd>um</dd>
+	<dd>Mixin object that includes common functions for manipulating mediaelement.js players</dd>
 	<dt><code>media.model</code></dt>
 	<dd>Namespace containing media models.</dd>
 	<dt><code>media.playlist</code></dt>
-	<dd>um</dd>
+	<dd>Manages modeling of audio and video playlist shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.post</code><span class="inheritance-info">Alias of <code>wp.ajax.post</code>.</span></dt>
 	<dd>Send a POST request to WordPress.</dd>
 	<dt><code>media.query( props )</code></dt>
@@ -50,9 +50,9 @@
 	<dt><code>media.transition</code></dt>
 	<dd>um</dd>
 	<dt><code>media.truncate()</code></dt>
-	<dd>um</dd>
+	<dd>Truncates a string by injecting an ellipsis into the middle.</dd>
 	<dt><code>media.video</code></dt>
-	<dd>um</dd>
+	<dd>Manages modeling of video shortcodes in the TinyMCE editor</dd>
 	<dt><code>media.view</code></dt>
 	<dd>Namespace for storing all media Backbone views.</dd>
 	<dt><code>media.view.settings</code></dt>
