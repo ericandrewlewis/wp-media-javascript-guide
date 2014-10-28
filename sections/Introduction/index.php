@@ -1,12 +1,26 @@
-<h3>An introduction to Backbone design patterns and reusable elements in the WordPress Media experience.</h3>
-<p>Backbone is an unopinionated framework to build on top of. It provides basic
-	objects (models and views are important to us), while leaving architectural
-	decisions to the developer. Peculiarities can be built into a codebase that
-	make the code hard to grok. The solution to this? Documentation. </p>
-<p>Some knowledge of <a target="_blank" href="http://backbonejs.org">Backbone</a>
-	is a good idea. Addy Osmani's <a target="_blank" href="http://addyosmani.github.io/backbone-fundamentals/">Developing Backbone.js Applications</a>
-	is a solid primer.</p>
-<figure>
-	<iframe width="560" height="315" src="//www.youtube.com/embed/j5KPXLzuBXE" frameborder="0" allowfullscreen></iframe><a href="https://twitter.com/koop">
-	<figcaption>Daryl Koopersmith</a> who wrote most of the Media code giving a brief introduction to Underscore, Backbone, and wp.media. Worth a watch.</figcaption>
-</figure>
+<div class="media-library-screenshot">
+	<div class="vignette"></div>
+</div>
+<p>The WordPress media library interfaces (the media modal) are a Javascript heavy
+feature written with <a target="_blank" href="http://backbonejs.org">Backbone</a>.
+Backbone is a light, unopinionated framework that can be dropped into an existing
+web application without much investment, making it suitable for WordPress core, where
+new features need to play nicely with existing functionality and our commitment
+to backwards compatibility.</p>
+
+<p>Javascript classes are documented in separate sections here.</p>
+
+<h3>FAQ</h3>
+
+<h4>I'm writing a plugin/theme and need a user to select an attachment, and do something
+with that selection. Can I use the media modal to do this?</h4>
+<p>Yes! The <a href="<?php WPMJG::get_section_url( 'wp.media.view.MediFrame.Select' ) ?>">Select workflow</a> can do this for you.</p>
+
+<h4>I want to add extra fields to the edit attachment interface.</h4>
+<p>You can! Use the <a href="<?php WPMJG::get_section_url( 'attachment_fields_to_edit' ) ?>">attachment_fields_to_edit filter</a> to produce extra UI, and save this extra data on the edit_attachment action.</p>
+
+<h3>External Resources</h3>
+<ul>
+	<li><a href="https://www.youtube.com/watch?v=j5KPXLzuBXE">A video of Daryl Koopersmith gave a high level introduction to WordPress media during the 3.5 release cycle</a>.</li>
+	<li><a target="_blank" href="http://addyosmani.github.io/backbone-fundamentals/">Developing Backbone.js Applications</a> by Addy Osmani. A good introduction to Javascript MV* development.</li>
+</ul>

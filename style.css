@@ -80,6 +80,31 @@
 	text-decoration: none;
 }
 
+.media-library-screenshot {
+	width: 772px;
+	height: 250px;
+	width: 772px;
+	height: 250px;
+	background-image: url(screenshot-media-library.png);
+	background-size: 772px 250px;
+	position: relative;
+	margin: 20px auto;
+}
+
+.vignette {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	padding: 20px 30px;
+	background: rgba( 0, 0, 0, 0.6 );
+	background: transparent;
+	-webkit-box-shadow: inset 0 0 50px 4px rgba( 0, 0, 0, 0.2 ), inset 0 -1px 0 rgba( 0, 0, 0, 0.1 );
+	-moz-box-shadow: inset 0 0 50px 4px rgba( 0, 0, 0, 0.2 ), inset 0 -1px 0 rgba( 0, 0, 0, 0.1 );
+	box-shadow: inset 0 0 50px 4px rgba( 0, 0, 0, 0.2 ), inset 0 -1px 0 rgba( 0, 0, 0, 0.1 );
+}
+
 .entry-template {
 	display: none;
 }
