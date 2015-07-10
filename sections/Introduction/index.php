@@ -14,10 +14,10 @@ to backwards compatibility.</p>
 
 <h4>I'm writing a plugin/theme and need a user to select an attachment, and do something
 with that selection. Can I use the media modal to do this?</h4>
-<p>Yes! The <a href="<?php WPMJG::get_section_url( 'wp.media.view.MediFrame.Select' ) ?>">Select workflow</a> can do this for you.</p>
+<p>Yes! The <a href="<?php echo WPMJG::get_section_url( 'wp.media.view.MediaFrame.Select' ) ?>">Select workflow</a> can do this for you.</p>
 
 <h4>I want to add extra fields to the edit attachment interface.</h4>
-<p>You can! Use the <a href="<?php WPMJG::get_section_url( 'attachment_fields_to_edit' ) ?>">attachment_fields_to_edit filter</a> to produce extra UI, and save this extra data on the edit_attachment action.</p>
+<p>You can! Use the <a href="<?php echo WPMJG::get_section_url( 'attachment_fields_to_edit' ) ?>">attachment_fields_to_edit filter</a> to produce extra UI, and save this extra data on the edit_attachment action.</p>
 
 <h3>External Resources</h3>
 <ul>
